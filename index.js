@@ -65,7 +65,7 @@ async function run() {
           itemName:updateCraftItem.itemName, 
           stockStatus:updateCraftItem.stockStatus,
            subCategory:updateCraftItem.subCategory, 
-           shortDescription:updateCraftItem.name,
+            shortDescription:updateCraftItem.shortDescription,
             price:updateCraftItem.price, 
             rating:updateCraftItem.rating,
              processingTime:updateCraftItem.processingTime,
@@ -73,6 +73,7 @@ async function run() {
               customizeAnswer:updateCraftItem.customizeAnswer
         }
       }
+      console.log(craftItem)
       const result = await craftCollection.updateOne(filter, craftItem,options);
       res.send(result);
     })
